@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bowling u Alberta — Hospůdka s bowlingem v srdci Karviné. Dobré jídlo, čepované pivo a skvělá zábava pod jednou střechou.">
+  <title>Bowling u Alberta — Karviná | Bowling & Restaurace</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎳</text></svg>">
+</head>
+<body>
+
+  <!-- ========== HEADER — S&W: Centered Logo, Split Nav ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+
+      <!-- Left links -->
+      <nav class="header__nav-left">
+        <a href="#o-nas" class="header__link">O nás</a>
+        <a href="#jidelni-listek" class="header__link">Jídelní lístek</a>
+      </nav>
+
+      <!-- Center logo -->
+      <a href="#" class="header__logo">
+        <span class="header__logo-text">
+          Bowling u Alberta
+          <span class="header__logo-sub">Karviná</span>
+        </span>
+      </a>
+
+      <!-- Right links + CTA -->
+      <nav class="header__nav-right">
+        <a href="#bowling" class="header__link">Bowling</a>
+        <a href="#akce" class="header__link">Akce</a>
+        <span class="header__cta">
+          <a href="#rezervace" class="btn btn--light">Rezervace</a>
+        </span>
+      </nav>
+
+      <!-- Hamburger for mobile -->
+      <button class="header__burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#o-nas" class="mobile-nav__link">O nás</a>
+    <a href="#jidelni-listek" class="mobile-nav__link">Jídelní lístek</a>
+    <a href="#bowling" class="mobile-nav__link">Bowling</a>
+    <a href="#akce" class="mobile-nav__link">Akce</a>
+    <a href="#kontakt" class="mobile-nav__link">Kontakt</a>
+    <a href="#rezervace" class="mobile-nav__link">Rezervace</a>
+  </nav>
+
+
+  <!-- ========== HERO — S&W: Full viewport, inset image ========== -->
+  <section class="hero" id="hero">
+    <div class="hero__image-wrap">
+      <img src="images/hero-gastro.jpg" alt="Bowling u Alberta — interiér">
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__pre">Vítejte v</p>
+      <h1 class="hero__title">Bowling<br>u Alberta</h1>
+      <p class="hero__sub">Dobré jídlo, čepované pivo a skvělá zábava — to vše pod jednou střechou.</p>
+      <a href="#rezervace" class="btn btn--light">Rezervovat dráhu</a>
+    </div>
+
+    <div class="hero__scroll" id="heroScroll">
+      <span>Objevte více</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ========== O NÁS — S&W: Overlapping card on image ========== -->
+  <section class="sw-section" id="o-nas">
+    <div class="container">
+      <div class="about reveal">
+
+        <div class="about__image">
+          <img src="images/about-interior.jpg" alt="Interiér Bowling u Alberta, Karviná">
+        </div>
+
+        <div class="about__card">
+          <span class="sw-label">O nás</span>
+          <h2>Kde se tradice<br>potkává se zábavou</h2>
+          <hr class="sw-rule">
+          <p>Bowling u Alberta je místo, kde se potkávají přátelé u dobrého jídla, čerstvě natočeného piva a několika hodů na bowlingovou dráhu. Žádné zbytečnosti — jen poctivá česká pohostinnost v přátelské atmosféře.</p>
+          <p style="margin-top: 16px;">Místo, kam se vracíte. Místo, které má duši.</p>
+
+          <div class="about__details">
+            <div class="about__detail">
+              <svg class="about__detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Einsteinova 2867/4, Karviná</span>
+            </div>
+            <div class="about__detail">
+              <svg class="about__detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span><strong>596 338 337</strong></span>
+            </div>
+            <div class="about__detail">
+              <svg class="about__detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Denně 13:00 – 24:00</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 40px;">
+            <a href="#rezervace" class="arrow-link">Rezervovat stůl nebo dráhu</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== JÍDELNÍ LÍSTEK — S&W: Banner hero + tabs ========== -->
+  <section class="sw-section" id="jidelni-listek">
+
+    <!-- Full-width menu banner with frame -->
+    <div class="menu-hero reveal">
+      <img src="images/menu-food.jpg" alt="Gastronomie Bowling u Alberta">
+      <div class="menu-hero__content">
+        <span class="sw-label">Jídelní lístek</span>
+        <h2>Naše kuchyně</h2>
+      </div>
+    </div>
+
+    <!-- Tabs + Items -->
+    <div class="container">
+      <div class="menu__tabs reveal" id="menuTabs" role="tablist">
+        <button class="menu__tab active" data-tab="predkrmy" role="tab">Předkrmy</button>
+        <button class="menu__tab" data-tab="hlavni" role="tab">Hlavní jídla</button>
+        <button class="menu__tab" data-tab="napoje" role="tab">Nápoje</button>
+        <button class="menu__tab" data-tab="dezerty" role="tab">Dezerty</button>
+      </div>
+
+      <!-- PŘEDKRMY -->
+      <div class="menu__panel active" id="panel-predkrmy">
+        <div class="menu__grid reveal">
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Tatarský biftek</h3>
+              <p class="menu__item-desc">Z hovězí svíčkové, podávaný s topinkami a česnekem</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Nakládaný hermelín</h3>
+              <p class="menu__item-desc">Marinovaný ve směsi pepřů, cibule a chilli papriček</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Domácí škvarky</h3>
+              <p class="menu__item-desc">Se škvarkovou pomazánkou, cibulí a chlebem</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Utopenec</h3>
+              <p class="menu__item-desc">Klasický hospodský utopenec v pikantním nálevu</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HLAVNÍ JÍDLA -->
+      <div class="menu__panel" id="panel-hlavni">
+        <div class="menu__grid reveal">
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Svíčková na smetaně</h3>
+              <p class="menu__item-desc">S houskovým knedlíkem, brusinkami a šlehačkou</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Hovězí burger Albert</h3>
+              <p class="menu__item-desc">200g hovězí, cheddar, karamelizovaná cibule, hranolky</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Smažený sýr</h3>
+              <p class="menu__item-desc">Klasika — s hranolky a domácí tatarskou omáčkou</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Kuřecí steak</h3>
+              <p class="menu__item-desc">Grilovaný kuřecí steak se zeleninou a americkými brambory</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Řízek po vídeňsku</h3>
+              <p class="menu__item-desc">Vepřový řízek s bramborovým salátem</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Grilovaná žebírka</h3>
+              <p class="menu__item-desc">Marinovaná v BBQ omáčce, coleslaw, pečivo</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- NÁPOJE -->
+      <div class="menu__panel" id="panel-napoje">
+        <div class="menu__grid reveal">
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Pilsner Urquell</h3>
+              <p class="menu__item-desc">Čepované, 0.5l</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Birell</h3>
+              <p class="menu__item-desc">Nealkoholické pivo, 0.5l</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Kofola</h3>
+              <p class="menu__item-desc">Točená, 0.4l</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Domácí limonáda</h3>
+              <p class="menu__item-desc">Dle denní nabídky — citron, zázvor, rozmarýn</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEZERTY -->
+      <div class="menu__panel" id="panel-dezerty">
+        <div class="menu__grid reveal">
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Palačinky s Nutellou</h3>
+              <p class="menu__item-desc">Se šlehačkou a čerstvým ovocem</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+          <div class="menu__item">
+            <div>
+              <h3 class="menu__item-name">Jablečný štrúdl</h3>
+              <p class="menu__item-desc">S vanilkovým zmrzlinovým kopečkem</p>
+            </div>
+            <span class="menu__item-price">— Kč</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="menu__note reveal">Kompletní nabídku nápojů a denní menu najdete přímo u nás.</p>
+    </div>
+  </section>
+
+
+  <!-- ========== BOWLING — S&W: Framed dark section ========== -->
+  <section class="sw-section" id="bowling">
+    <div class="framed reveal">
+      <div class="framed__layout">
+
+        <div class="framed__text">
+          <span class="sw-label">Bowling</span>
+          <h2>Profesionální<br>bowlingové dráhy</h2>
+          <hr class="sw-rule">
+          <p>4 profesionální dráhy, moderní ozvučení a atmosféra, která dělá z každého hodu zážitek. Přijďte s přáteli, s rodinou nebo s kolegy — zábava je zaručena.</p>
+
+          <div class="bowling__features">
+            <div class="bowling__feature">
+              <span class="bowling__feature-icon">🎳</span>
+              <h3>4 dráhy</h3>
+              <p>Profesionální povrch</p>
+            </div>
+            <div class="bowling__feature">
+              <span class="bowling__feature-icon">🎵</span>
+              <h3>Ozvučení</h3>
+              <p>Hudba a atmosféra</p>
+            </div>
+            <div class="bowling__feature">
+              <span class="bowling__feature-icon">👥</span>
+              <h3>Skupiny</h3>
+              <p>Firemní akce a párty</p>
+            </div>
+            <div class="bowling__feature">
+              <span class="bowling__feature-icon">🕐</span>
+              <h3>Celotýdenně</h3>
+              <p>13:00 – 24:00</p>
+            </div>
+          </div>
+
+          <div style="margin-top: 40px;">
+            <a href="#rezervace" class="btn btn--light">Zarezervovat dráhu</a>
+          </div>
+        </div>
+
+        <div class="framed__image">
+          <img src="images/bowling-lanes.jpg" alt="Bowlingové dráhy v Bowling u Alberta">
+        </div>
+
+      </div>
+
+      <!-- Pricing -->
+      <div class="bowling__pricing reveal">
+        <div class="bowling__price-card">
+          <p class="bowling__price-card-title">Pondělí – Čtvrtek</p>
+          <p class="bowling__price-card-price">— Kč</p>
+          <p class="bowling__price-card-unit">za hodinu / dráha</p>
+        </div>
+        <div class="bowling__price-card">
+          <p class="bowling__price-card-title">Pátek – Sobota</p>
+          <p class="bowling__price-card-price">— Kč</p>
+          <p class="bowling__price-card-unit">za hodinu / dráha</p>
+        </div>
+        <div class="bowling__price-card">
+          <p class="bowling__price-card-title">Neděle & Svátky</p>
+          <p class="bowling__price-card-price">— Kč</p>
+          <p class="bowling__price-card-unit">za hodinu / dráha</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== AKCE — S&W: Hall of Fame cards ========== -->
+  <section class="sw-section" id="akce">
+    <div class="container">
+      <span class="sw-label reveal">Zábava & Akce</span>
+      <h2 class="reveal" style="font-size: clamp(2rem,3.5vw,2.8rem); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Více než jen bowling</h2>
+      <hr class="sw-rule reveal">
+      <p class="reveal" style="margin-bottom: 64px;">Pravidelné kvízy, sportovní přenosy a další aktivity. U nás se nikdy nudit nebudete.</p>
+
+      <div class="hall-grid reveal-stagger">
+        <div class="hall-card reveal">
+          <div class="hall-card__image">
+            <img src="images/events-quiz.jpg" alt="Kvízový večer">
+            <span class="hall-card__badge">Každý čtvrtek</span>
+          </div>
+          <h3 class="hall-card__title">Chytrý kvíz</h3>
+          <hr class="hall-card__rule">
+          <p class="hall-card__desc">Otestujte své znalosti v našem oblíbeném hospodském kvízu. Tvoříte týmy a soutěžíte o zajímavé ceny.</p>
+          <span class="hall-card__meta">🧠 Začátek ve 20:00</span>
+        </div>
+
+        <div class="hall-card reveal">
+          <div class="hall-card__image">
+            <img src="images/bowling-lanes.jpg" alt="Sportovní přenosy">
+          </div>
+          <h3 class="hall-card__title">Sportovní přenosy</h3>
+          <hr class="hall-card__rule">
+          <p class="hall-card__desc">Hokej, fotbal a další sportovní události na velké obrazovce.
+             Atmosféra jako na stadionu — jen s lepším pivem.</p>
+          <span class="hall-card__meta">📺 Dle programu</span>
+        </div>
+
+        <div class="hall-card reveal">
+          <div class="hall-card__image">
+            <img src="images/about-interior.jpg" alt="Šipky a fotbálek">
+          </div>
+          <h3 class="hall-card__title">Šipky & Fotbálek</h3>
+          <hr class="hall-card__rule">
+          <p class="hall-card__desc">Další hry pro zpestření vašeho večera. Stolní fotbálek a šipky jsou k dispozici všem hostům zdarma.</p>
+          <span class="hall-card__meta">🎯 Kdykoli v otevírací době</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== REZERVACE — S&W: Framed with form ========== -->
+  <section class="sw-section" id="rezervace">
+    <div class="reservation reveal">
+
+      <div class="reservation__inner">
+        <!-- Left: info -->
+        <div class="reservation__info">
+          <span class="sw-label" style="color: var(--champagne);">Rezervace</span>
+          <h2>Zarezervujte<br>si dráhu</h2>
+          <hr class="sw-rule">
+          <p>Chcete mít jistotu, že na vás bude dráha čekat? Vyplňte formulář a my vám rezervaci potvrdíme telefonicky.</p>
+          <p>Pro skupiny nad 10 osob a firemní akce nás prosíme kontaktujte telefonicky, rádi vám připravíme nabídku na míru.</p>
+
+          <div class="reservation__contact">
+            <div class="reservation__contact-item">
+              <svg class="reservation__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <p class="reservation__contact-text"><a href="tel:+420596338337">596 338 337</a></p>
+            </div>
+            <div class="reservation__contact-item">
+              <svg class="reservation__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <p class="reservation__contact-text">Einsteinova 2867/4, Karviná</p>
+            </div>
+            <div class="reservation__contact-item">
+              <svg class="reservation__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <p class="reservation__contact-text">Denně 13:00 – 24:00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="reservation__form-wrap">
+          <form id="reservationForm" novalidate>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="name">Jméno *</label>
+                <input class="form__input" type="text" id="name" name="name" placeholder="Vaše jméno" required>
+                <span class="form__error" id="name-error"></span>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="phone">Telefon *</label>
+                <input class="form__input" type="tel" id="phone" name="phone" placeholder="+420..." required>
+                <span class="form__error" id="phone-error"></span>
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="date">Datum *</label>
+                <input class="form__input" type="date" id="date" name="date" required>
+                <span class="form__error" id="date-error"></span>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="time">Čas *</label>
+                <select class="form__select" id="time" name="time" required>
+                  <option value="">Vyberte čas</option>
+                  <option>13:00</option><option>14:00</option>
+                  <option>15:00</option><option>16:00</option>
+                  <option>17:00</option><option>18:00</option>
+                  <option>19:00</option><option>20:00</option>
+                  <option>21:00</option><option>22:00</option>
+                  <option>23:00</option>
+                </select>
+                <span class="form__error" id="time-error"></span>
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="guests">Počet osob</label>
+                <select class="form__select" id="guests" name="guests">
+                  <option>2</option><option>3</option>
+                  <option>4</option><option>5</option>
+                  <option>6</option><option>7</option>
+                  <option>8</option><option>9</option>
+                  <option>10</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="lanes">Počet drah</label>
+                <select class="form__select" id="lanes" name="lanes">
+                  <option>1</option><option>2</option>
+                  <option>3</option><option>4</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="form__group form__group--full">
+                <label class="form__label" for="note">Poznámka</label>
+                <textarea class="form__textarea" id="note" name="note" placeholder="Narozeniny, firemní akce, speciální požadavky…" rows="3"></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn--light form__submit">Odeslat rezervaci</button>
+          </form>
+
+          <!-- Success overlay -->
+          <div class="form__success" id="formSuccess">
+            <div class="form__success-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>Děkujeme!</h3>
+            <p>Vaši rezervaci jsme přijali. Brzy vás budeme kontaktovat telefonicky pro potvrzení.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="kontakt">
+    <div class="container">
+
+      <div class="footer__grid">
+        <!-- Brand -->
+        <div class="footer__brand">
+          <h3>Bowling u Alberta</h3>
+          <p>Hospůdka s bowlingem v srdci Karviné. Dobré jídlo, čepované pivo a skvělá zábava — to vše pod jednou střechou.</p>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <h4 class="footer__heading">Navigace</h4>
+          <nav class="footer__nav">
+            <a href="#o-nas">O nás</a>
+            <a href="#jidelni-listek">Jídelní lístek</a>
+            <a href="#bowling">Bowling</a>
+            <a href="#akce">Akce</a>
+            <a href="#rezervace">Rezervace</a>
+          </nav>
+        </div>
+
+        <!-- Hours -->
+        <div>
+          <h4 class="footer__heading">Otevírací doba</h4>
+          <div class="footer__hours-row"><span>Pondělí</span><span>13:00 – 24:00</span></div>
+          <div class="footer__hours-row"><span>Úterý</span><span>13:00 – 24:00</span></div>
+          <div class="footer__hours-row"><span>Středa</span><span>13:00 – 24:00</span></div>
+          <div class="footer__hours-row"><span>Čtvrtek</span><span>13:00 – 24:00</span></div>
+          <div class="footer__hours-row"><span>Pátek</span><span>13:00 – 24:00</span></div>
+          <div class="footer__hours-row"><span>Sobota</span><span>13:00 – 24:00</span></div>
+          <div class="footer__hours-row"><span>Neděle</span><span>13:00 – 24:00</span></div>
+        </div>
+
+        <!-- Map -->
+        <div>
+          <h4 class="footer__heading">Kde nás najdete</h4>
+          <div class="footer__map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2566.7!2d18.5413!3d49.8543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDUxJzE1LjUiTiAxOMKwMzInMjguNyJF!5e0!3m2!1scs!2scz!4v1" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Bowling u Alberta, Karviná. Všechna práva vyhrazena.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
