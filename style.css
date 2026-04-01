@@ -82,6 +82,21 @@ button  { cursor: pointer; }
 
 ::selection { background: var(--champagne); color: var(--charcoal); }
 
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--champagne);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--champagne);
+  outline-offset: 2px;
+}
+
 
 /* ===================================================
    UTILITY
@@ -352,11 +367,15 @@ button  { cursor: pointer; }
 
 .header--scrolled .header__burger span { background: var(--hunter); }
 
+/* Header when mobile nav is open */
+.header--nav-open .header__logo-text { color: var(--white) !important; }
+.header--nav-open .header__burger span { background: var(--white) !important; }
+
 .header__burger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .header__burger.active span:nth-child(2) { opacity: 0; }
 .header__burger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-/* Mobile overlay */
+/* Mobile overlay — slide from right (opaque background) */
 .mobile-nav {
   position: fixed;
   inset: 0;
@@ -371,22 +390,36 @@ button  { cursor: pointer; }
   align-items: center;
   justify-content: center;
   gap: 28px;
-  opacity: 0;
+  transform: translateX(100%);
   pointer-events: none;
+  visibility: hidden;
   overflow: hidden;
-  transition: opacity 350ms var(--ease);
+  transition: transform 450ms var(--ease-smooth), visibility 0ms linear 450ms;
 }
 
-.mobile-nav.active { opacity: 1; pointer-events: all; }
+.mobile-nav.active {
+  transform: translateX(0);
+  pointer-events: all;
+  visibility: visible;
+  transition: transform 450ms var(--ease-smooth), visibility 0ms linear 0ms;
+}
 
 .mobile-nav__link {
   font-family: var(--font-serif);
   font-size: 2.2rem;
   color: var(--white);
   text-decoration: none;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
   opacity: 0;
   transform: translateY(20px);
-  transition: all 350ms var(--ease);
+  transition: opacity 350ms var(--ease), transform 350ms var(--ease);
+}
+
+.mobile-nav__link:hover,
+.mobile-nav__link:focus-visible {
+  color: var(--champagne-light);
 }
 
 .mobile-nav.active .mobile-nav__link { opacity: 1; transform: translateY(0); }
@@ -832,9 +865,13 @@ button  { cursor: pointer; }
 }
 
 .bowling__feature-icon {
-  font-size: 1.6rem;
-  margin-bottom: 12px;
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 12px;
   display: block;
+  color: var(--champagne);
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .bowling__feature h3 {
@@ -965,9 +1002,18 @@ button  { cursor: pointer; }
 }
 
 .hall-card__meta {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   margin-top: 16px;
   font-size: 0.8rem;
+  color: var(--champagne-dark);
+}
+
+.hall-card__meta-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
   color: var(--champagne-dark);
 }
 
@@ -1345,11 +1391,11 @@ button  { cursor: pointer; }
   :root {
     --section-gap: 100px;
     --frame-inset: 24px;
+    --header-height: 80px;
   }
 
   .header__nav-left,
-  .header__nav-right .header__link,
-  .header__cta { display: none; }
+  .header__nav-right { display: none; }
 
   .header__burger { display: flex; }
 
@@ -1363,6 +1409,11 @@ button  { cursor: pointer; }
   .framed__image { aspect-ratio: 16/9; }
 
   .menu__grid { grid-template-columns: 1fr; }
+
+  .menu__tab {
+    min-height: 44px;
+    padding: 12px 8px;
+  }
 
   .hall-grid { grid-template-columns: 1fr; gap: 48px; }
   .hall-card__image { aspect-ratio: 16/10; }
@@ -1386,6 +1437,28 @@ button  { cursor: pointer; }
   :root {
     --section-gap: 72px;
     --frame-inset: 16px;
+    --header-height: 70px;
+  }
+
+  /* Header mobile */
+  .header__logo-text {
+    font-size: 1.25rem;
+  }
+
+  .header__logo-sub {
+    font-size: 0.55rem;
+    letter-spacing: 3px;
+  }
+
+  /* Hero mobile */
+  .hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .hero__pre {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
   }
 
   .hero__title {
@@ -1393,34 +1466,277 @@ button  { cursor: pointer; }
     letter-spacing: 1px;
   }
 
+  .hero__sub {
+    font-size: 0.95rem;
+    padding: 0 8px;
+    margin-bottom: 32px;
+  }
+
   .hero__image-wrap {
     left: var(--frame-inset);
     right: var(--frame-inset);
   }
 
+  .hero__scroll {
+    bottom: 24px;
+  }
+
+  /* About mobile */
   .about__card {
-    padding: 36px 28px;
+    padding: 36px 24px;
     margin-top: -24px;
   }
 
-  .about__image { min-height: 300px; }
+  .about__card h2 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
 
-  .framed { padding: 40px 24px; margin: 0 var(--frame-inset); }
-  .framed::before { inset: 10px; }
+  .about__image { min-height: 280px; }
 
-  .bowling__features { grid-template-columns: 1fr; }
+  /* Menu mobile */
+  .menu-hero { height: 240px; }
+  .menu-hero::before { inset: 8px; }
 
-  .menu-hero { height: 280px; }
-  .menu-hero::before { inset: 10px; }
+  .menu-hero__content h2 {
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
+    letter-spacing: 2px;
+  }
 
-  .menu__tabs { flex-wrap: wrap; gap: 16px 24px; }
+  .menu__tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    justify-content: flex-start;
+    margin: 40px 0 36px;
+    padding-bottom: 2px;
+  }
 
+  .menu__tabs::-webkit-scrollbar { display: none; }
+
+  .menu__tab {
+    min-height: 44px;
+    padding: 12px 16px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-size: 0.65rem;
+  }
+
+  .menu__item-name {
+    font-size: 1.05rem;
+  }
+
+  .menu__item-desc {
+    font-size: 0.85rem;
+  }
+
+  .menu__note {
+    margin-top: 32px;
+    font-size: 0.85rem;
+  }
+
+  /* Bowling / Framed mobile */
+  .framed {
+    padding: 36px 20px;
+    margin: 0 var(--frame-inset);
+  }
+  .framed::before { inset: 8px; }
+
+  .framed__text h2 {
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
+    letter-spacing: 1px;
+  }
+
+  .framed__text p {
+    font-size: 0.95rem;
+  }
+
+  .framed__image { aspect-ratio: 4/3; }
+
+  .bowling__features {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .bowling__feature {
+    padding: 16px 12px;
+  }
+
+  .bowling__feature-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .bowling__feature h3 {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+  }
+
+  .bowling__feature p {
+    font-size: 0.8rem;
+  }
+
+  .bowling__pricing {
+    margin-top: 40px;
+    gap: 12px;
+  }
+
+  .bowling__price-card {
+    padding: 24px 16px;
+  }
+
+  .bowling__price-card-price {
+    font-size: 1.6rem;
+  }
+
+  /* Events / Hall cards mobile */
+  .hall-grid { gap: 40px; }
+
+  .hall-card__title {
+    font-size: 1.05rem;
+    margin-top: 16px;
+  }
+
+  .hall-card__desc {
+    font-size: 0.9rem;
+  }
+
+  /* Reservation mobile */
   .reservation { margin: 0; }
-  .reservation::before { inset: 10px; }
-  .reservation__info { padding: 40px 24px; }
-  .reservation__form-wrap { padding: 32px 24px; }
+  .reservation::before { inset: 8px; }
+
+  .reservation__info {
+    padding: 36px 24px;
+  }
+
+  .reservation__info h2 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  .reservation__form-wrap {
+    padding: 32px 24px;
+  }
+
   .form__row { grid-template-columns: 1fr; }
 
-  .footer__grid { grid-template-columns: 1fr; }
+  .form__input,
+  .form__select,
+  .form__textarea {
+    padding: 14px 16px;
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    min-height: 48px;
+  }
+
+  .form__submit {
+    background: var(--champagne-dark);
+    border-color: var(--champagne-dark);
+    color: var(--white);
+    min-height: 52px;
+    font-size: 0.8rem;
+    margin-top: 16px;
+  }
+
+  .form__submit:hover,
+  .form__submit:active {
+    background: var(--champagne);
+    border-color: var(--champagne);
+    color: var(--charcoal);
+  }
+
+  /* Footer mobile */
+  .footer { padding: 56px 0 0; }
+  .footer__grid { grid-template-columns: 1fr; gap: 32px; }
   .footer__bottom { flex-direction: column; gap: 16px; text-align: center; }
+  .footer__map { height: 180px; }
+
+  /* Mobile nav tweaks */
+  .mobile-nav { gap: 20px; }
+  .mobile-nav__link {
+    font-size: 1.8rem;
+    min-height: 48px;
+    padding: 4px 0;
+  }
+
+  /* Buttons touch target */
+  .btn {
+    min-height: 48px;
+    padding: 14px 32px;
+  }
+
+  /* Section heading sizes */
+  #akce h2 {
+    font-size: clamp(1.5rem, 7vw, 2rem) !important;
+  }
+}
+
+
+/* ===================================================
+   RESPONSIVE — SMALL MOBILE
+   =================================================== */
+
+@media (max-width: 380px) {
+  :root {
+    --frame-inset: 12px;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .framed__text h2 {
+    font-size: 1.4rem;
+  }
+
+  .about__card h2 {
+    font-size: 1.4rem;
+  }
+
+  .bowling__features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .menu__tab {
+    padding: 10px 12px;
+    font-size: 0.6rem;
+  }
+
+  .mobile-nav__link {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* ===================================================
+   ACCESSIBILITY — Reduced Motion
+   =================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .mobile-nav {
+    transition: none;
+  }
+
+  .mobile-nav__link {
+    transition: none;
+  }
 }

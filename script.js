@@ -20,26 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNav = document.getElementById('mobileNav');
 
   if (burger && mobileNav) {
-    burger.addEventListener('click', () => {
-      burger.classList.toggle('active');
-      mobileNav.classList.toggle('active');
-      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-      // Force the burger spans to be white when active
-      if (burger.classList.contains('active')) {
-        burger.querySelectorAll('span').forEach(s => s.style.background = '#fff');
-      } else {
-        burger.querySelectorAll('span').forEach(s => s.style.background = '');
-      }
-    });
+    const toggleNav = (open) => {
+      const isOpen = typeof open === 'boolean' ? open : !mobileNav.classList.contains('active');
+      burger.classList.toggle('active', isOpen);
+      mobileNav.classList.toggle('active', isOpen);
+      header.classList.toggle('header--nav-open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    };
+
+    burger.addEventListener('click', () => toggleNav());
 
     // Close on link click
     mobileNav.querySelectorAll('.mobile-nav__link').forEach(link => {
-      link.addEventListener('click', () => {
-        burger.classList.remove('active');
-        mobileNav.classList.remove('active');
-        document.body.style.overflow = '';
-        burger.querySelectorAll('span').forEach(s => s.style.background = '');
-      });
+      link.addEventListener('click', () => toggleNav(false));
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+        toggleNav(false);
+      }
     });
   }
 
