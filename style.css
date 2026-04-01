@@ -47,6 +47,7 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -1311,6 +1312,7 @@ textarea:focus-visible {
 .footer__map iframe {
   width: 100%;
   height: 100%;
+  max-width: 100%;
   border: none;
   filter: grayscale(0.3);
 }
@@ -1436,7 +1438,7 @@ textarea:focus-visible {
 @media (max-width: 640px) {
   :root {
     --section-gap: 72px;
-    --frame-inset: 16px;
+    --frame-inset: 20px;
     --header-height: 70px;
   }
 
@@ -1607,7 +1609,7 @@ textarea:focus-visible {
   }
 
   /* Reservation mobile */
-  .reservation { margin: 0; }
+  .reservation { margin: 0 var(--frame-inset); }
   .reservation::before { inset: 8px; }
 
   .reservation__info {
@@ -1682,7 +1684,7 @@ textarea:focus-visible {
 
 @media (max-width: 380px) {
   :root {
-    --frame-inset: 12px;
+    --frame-inset: 16px;
   }
 
   .hero__title {
